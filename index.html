@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #85FFBD;
+            /* background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%); */
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+            height: 100vh;
+
+        }
+
+        .heading {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .container {
+            /* height: 400px; */
+            width: 500px;
+            background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+
+
+            border-radius: 10px;
+            margin: 80px auto;
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        .input-filed {
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid black;
+            width: 280px;
+            display: block;
+            margin: 20px auto;
+            padding: 8px;
+
+        }
+
+        .result {
+            font-size: 30px;
+            color: gray;
+            text-align: center;
+            margin-top: 40px;
+
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: space-evenly;
+            margin: 10px auto;
+            width: 500px;
+
+
+        }
+
+        .button {
+            /* background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); */
+            background-color: #00DBDE;
+            background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+
+            width: 210px;
+            padding: 8px 25px;
+            border: none;
+            border-radius: 15px;
+            font-size: 17px;
+            cursor: pointer;
+            margin: 10px;
+            font-weight: bold;
+
+        }
+
+        .button:hover {
+            font-size: 18px;
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+        }
+        /* media querries */
+        @media screen and (min-width:300px)and (max-width:600px) {
+            .container {
+            
+            width: 80%;
+           
+        }
+        .heading {
+            font-size: 25px;
+           
+        }
+        .input-filed {
+          width: 80%;
+          font-size: 18px;
+        }
+        
+        .result {
+            font-size: 30px;
+           
+            margin-top: 20px;
+
+        }
+        
+        .button-container {
+            
+            width: 100%;
+            margin: 0 auto;
+            
+        }
+        
+        .button {
+        
+            width: 150px;
+            padding: 8px 18px;
+           
+            font-size: 15px;
+          font-weight: bold;
+            margin: 8px;
+
+        }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="heading">BASIC CALCULATOR</h1>
+        <input type="text" placeholder="Enter first number" id="first-number" class="input-filed" />
+        <input type="text" placeholder="Enter second number" id="second-number" class="input-filed" />
+        <p class="result" id="result">Result is Here</p>
+        <div class="button-container">
+            <button class="button" onclick="sum()">ADDITION</button>
+            <button class="button" onclick="sub()">SUBTRACTION</button>
+            <button class="button" onclick="mul()">MULTIPLICATION</button>
+            <button class="button" onclick="div()">DIVISION</button>
+            <button class="button" onclick="reset()">RESET</button>
+        </div>
+
+    </div>
+
+    <!-- Javascript -->
+    <script>
+
+
+        const inputOne = document.getElementById("first-number");
+        const inputTwo = document.getElementById("second-number");
+        const resultElement = document.getElementById("result");
+
+        function sum() {
+
+            const result = parseInt(inputOne.value) + parseInt(inputTwo.value);
+            resultElement.innerText = result;
+
+        }
+        function sub() {
+
+            const result = parseInt(inputOne.value) - parseInt(inputTwo.value);
+            resultElement.innerText = result;
+        }
+        function mul() {
+
+            const result = parseInt(inputOne.value) * parseInt(inputTwo.value);
+            resultElement.innerText = result;
+        }
+        function div() {
+
+            const result = parseInt(inputOne.value) / parseInt(inputTwo.value);
+            resultElement.innerText = result;
+        }
+        function reset() {
+
+            resultElement.innerText = "Result is Here ";
+            inputOne.value = "";
+            inputTwo.value = "";
+
+        }
+    </script>
+
+</body>
+
+</html>
